@@ -94,9 +94,40 @@ typedef struct {
 } Person;
 
 bool isAdult(Person *person) {
-	return person->age > 18;
+	return person->age > 17;
+}
+
+int main() {
+	Person bob = {"bob", 24};
+
+	printf("%v", isAdult(bob));
+
+	return 0;
 }
 ```
+C'est l'équivalent exacte de ce code en Java :
+```java
+public class Person {
+	private String name;
+	private int age;
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	public boolean isAdult() {
+		return this.age > 17;
+	}
+}
+
+public static void main(String[] args) {
+	Person bob = new Person("Bob", 24);
+	
+	System.out.println(bob.isAdult());
+}
+```
+On ne le vois pas, mais Java ajoute automatiquement `this` dans les paramètres de chaque méthode, qui est l'équivalent du `Person *person` dans la fonction en C.
 
 
 
